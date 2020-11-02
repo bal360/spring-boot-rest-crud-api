@@ -51,8 +51,11 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
 
 	@Override
 	public void deleteById(int id) {
-//		Query query = entityManager/createQuery("DELETE FROM Employee WHERE id=:employeeId");
 		
-//		query.setParameter("employeeId", id);
+		Query query = entityManager.createQuery("DELETE FROM Employee WHERE id=:employeeId");
+		
+		query.setParameter("employeeId", id);
+		
+		query.executeUpdate();
 	}
 }
